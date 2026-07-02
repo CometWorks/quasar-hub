@@ -8,13 +8,13 @@
     <Tooltip>Quasar entity viewer column and browser-side Space Engineers grid viewer.</Tooltip>
     <Description>Grid Viewer contributes the viewer column on Quasar's Entities page and hosts the browser-side Space Engineers grid and asteroid viewer assets.
 
-        This first UI plugin adapter replaces only the fine-grained viewer column targets and reuses Quasar's current fullscreen viewer dialog through the host-provided OpenEntityViewer callback while the full viewer runtime is extracted from Quasar core.
+        This first UI plugin adapter replaces only the fine-grained viewer column targets and opens its own fullscreen MudBlazor dialog while serving the viewer from Quasar's plugin static asset mount.
     </Description>
 
     <PluginKind>QuasarUiPlugin</PluginKind>
     <ProjectPath>quasar-plugin/CometWorks.GridViewer.QuasarPlugin/CometWorks.GridViewer.QuasarPlugin.csproj</ProjectPath>
     <PackageManifest>quasar-plugin.json</PackageManifest>
     <QuasarVersion>&gt;=0.1.0</QuasarVersion>
-    <Commit>afd666568f7a078abe9b3df4fd2e2722a8d5c23b</Commit>
+    <Commit>861206309572889fee5fa53f77ae06d1b85f5707</Commit>
 
 </PluginData>
