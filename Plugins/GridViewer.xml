@@ -12,9 +12,9 @@
     </Description>
 
     <PluginKind>QuasarUiPlugin</PluginKind>
-    <ProjectPath>quasar-plugin/CometWorks.GridViewer.QuasarPlugin/CometWorks.GridViewer.QuasarPlugin.csproj</ProjectPath>
+    <ProjectPath>src/CometWorks.GridViewer.Quasar/CometWorks.GridViewer.Quasar.csproj</ProjectPath>
     <PackageManifest>quasar-plugin.json</PackageManifest>
     <QuasarVersion>&gt;=0.1.0</QuasarVersion>
-    <Commit>861206309572889fee5fa53f77ae06d1b85f5707</Commit>
+    <Commit>3cbeb5ef86ebb20f8bb989d3d3f63f930309f1ce</Commit>
 
 </PluginData>
