@@ -1,20 +1,14 @@
 <?xml version="1.0"?>
 <PluginData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GitHubPlugin">
-
     <Id>a67dd531-79e7-4a3a-b979-7bfed023ab77</Id>
     <RepoId>CometWorks/viewer</RepoId>
-    <FriendlyName>Grid Viewer</FriendlyName>
+    <FriendlyName>Entity Viewer</FriendlyName>
     <Author>CometWorks</Author>
     <Tooltip>Quasar entity viewer column and browser-side Space Engineers grid viewer.</Tooltip>
-    <Description>Grid Viewer contributes the viewer column on Quasar's Entities page and hosts the browser-side Space Engineers grid and asteroid viewer assets.
-
-        This first UI plugin adapter replaces only the fine-grained viewer column targets and opens its own fullscreen MudBlazor dialog while serving the viewer from Quasar's plugin static asset mount.
-    </Description>
-
+    <Description>Entity Viewer allows you to host a browser-side Space Engineers entity viewing engine.</Description>
     <PluginKind>QuasarUiPlugin</PluginKind>
     <ProjectPath>src/CometWorks.GridViewer.Quasar/CometWorks.GridViewer.Quasar.csproj</ProjectPath>
     <PackageManifest>quasar-plugin.json</PackageManifest>
     <QuasarVersion>&gt;=0.1.0</QuasarVersion>
     <Commit>b4ed1ebf8565544ee3bfaebd8d965973ef122cfe</Commit>
-
 </PluginData>
