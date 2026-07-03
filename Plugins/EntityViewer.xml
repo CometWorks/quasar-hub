@@ -4,11 +4,11 @@
     <RepoId>CometWorks/viewer</RepoId>
     <FriendlyName>Entity Viewer</FriendlyName>
     <Author>CometWorks</Author>
-    <Tooltip>Quasar entity viewer column and browser-side Space Engineers grid viewer.</Tooltip>
+    <Tooltip>Quasar entity viewer column and browser-side Space Engineers entity viewer.</Tooltip>
     <Description>Entity Viewer allows you to host a browser-side Space Engineers entity viewing engine.</Description>
     <PluginKind>QuasarUiPlugin</PluginKind>
-    <ProjectPath>src/CometWorks.GridViewer.Quasar/CometWorks.GridViewer.Quasar.csproj</ProjectPath>
+    <ProjectPath>src/CometWorks.EntityViewer.Quasar/CometWorks.EntityViewer.Quasar.csproj</ProjectPath>
     <PackageManifest>quasar-plugin.json</PackageManifest>
     <QuasarVersion>&gt;=0.1.0</QuasarVersion>
-    <Commit>b4ed1ebf8565544ee3bfaebd8d965973ef122cfe</Commit>
+    <Commit>caa2a4e4f6c92355afeae8e01cc45994e9d3a44b</Commit>
 </PluginData>

@@ -45,7 +45,7 @@ Required fields:
 - `Id`
   Stable plugin id. Generate once and never change it.
 - `RepoId`
-  GitHub repository id, for example `CometWorks/grid-viewer`.
+  GitHub repository id, for example `CometWorks/entity-viewer`.
 - `FriendlyName`
   Display name shown in Quasar.
 - `Author`
