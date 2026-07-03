@@ -10,5 +10,5 @@
     <ProjectPath>src/CometWorks.EntityViewer.Quasar/CometWorks.EntityViewer.Quasar.csproj</ProjectPath>
     <PackageManifest>quasar-plugin.json</PackageManifest>
     <QuasarVersion>&gt;=0.1.0</QuasarVersion>
-    <Commit>e72064dd130c4091d8f0a13a48413782f4ee0f99</Commit>
+    <Commit>79c47304d665c72099a95e54d0b2d39dd8b1fd22</Commit>
 </PluginData>
