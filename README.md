@@ -76,6 +76,10 @@ Optional fields:
   `Windows`, `Linux`, or both.
 - `Hidden`
   Hide dependency-only plugins from normal selection.
+- `ImplicitLoading`
+  Install or update this reviewed plugin automatically from QuasarHub. First
+  install enables it for the next Quasar restart; later implicit updates keep a
+  user-disabled plugin disabled.
 - `AlternateVersions`
   Named alternate commits for test or custom builds.
 

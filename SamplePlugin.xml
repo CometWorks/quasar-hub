@@ -58,6 +58,10 @@
     <Hidden>false</Hidden>
     -->
 
+    <!-- Optional automatic install/update from QuasarHub.
+    <ImplicitLoading>false</ImplicitLoading>
+    -->
+
     <!-- Current plugin version's commit hash. -->
     <Commit>TODO Git commit hash</Commit>
 
