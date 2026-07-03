@@ -15,6 +15,6 @@
     <ProjectPath>src/CometWorks.GridViewer.Quasar/CometWorks.GridViewer.Quasar.csproj</ProjectPath>
     <PackageManifest>quasar-plugin.json</PackageManifest>
     <QuasarVersion>&gt;=0.1.0</QuasarVersion>
-    <Commit>a97015caf1d327fa72ee5f6d13c96095a436197e</Commit>
+    <Commit>6af8d638e0f15320a01f8c74271eecc49727a142</Commit>
 
 </PluginData>
