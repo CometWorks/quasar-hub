@@ -58,6 +58,10 @@
     <Hidden>false</Hidden>
     -->
 
+    <!-- Recommended plugins are highlighted in Quasar but remain opt-in.
+    <Recommended>false</Recommended>
+    -->
+
     <!-- Optional automatic install/update from QuasarHub.
     <ImplicitLoading>false</ImplicitLoading>
     -->

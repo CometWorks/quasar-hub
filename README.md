@@ -76,6 +76,9 @@ Optional fields:
   `Windows`, `Linux`, or both.
 - `Hidden`
   Hide dependency-only plugins from normal selection.
+- `Recommended`
+  Highlight the plugin in Quasar's UI plugin catalog without installing it.
+  Recommended plugins remain opt-in.
 - `ImplicitLoading`
   Install or update this reviewed plugin automatically from QuasarHub. First
   install enables it for the next Quasar restart; later implicit updates keep a

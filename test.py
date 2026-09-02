@@ -63,6 +63,11 @@ def validate(xml_file: str):
     if not re.search(r"^[0-9a-fA-F]{7,40}$", commit):
         raise Exception(f"'{commit}' in {xml_file} is not a valid commit id")
 
+    for field in ("Hidden", "Recommended", "ImplicitLoading"):
+        value = root.findtext(field)
+        if value is not None and value.strip().lower() not in ("true", "false"):
+            raise Exception(f"'{value.strip()}' in {xml_file} is not a valid {field} boolean")
+
 
 def require_text(root, xml_file: str, name: str) -> str:
     element = root.find(name)
