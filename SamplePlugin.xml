@@ -22,8 +22,8 @@
         Describe the Quasar UI pages, nav items, extension points, and any
         companion Magnetar plugins this UI talks to.
 
-        Quasar plugins should use MudBlazor for ordinary UI controls and should
-        inherit Quasar theme tokens instead of shipping a competing app shell.
+        Quasar plugins should use native HTML/Razor controls, inherit Quasar
+        appearance tokens, and scope their styles to plugin components.
     </Description>
 
     <!-- Quasar UI plugin manifests use this kind. -->
