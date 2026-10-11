@@ -16,7 +16,7 @@ manifests.
   - pinned repository and commit metadata
 - `quasar-plugin-template`
   - starter repository for new Quasar UI plugins
-  - shows MudBlazor-first UI layout, nav/page contribution, and companion-channel
+  - shows native HTML/Razor UI layout, nav/page contribution, and companion-channel
     conventions
 - plugin repositories
   - own plugin source code
@@ -27,8 +27,8 @@ manifests.
 
 1. Start from [Quasar Plugin Template](https://github.com/CometWorks/quasar-plugin-template).
 2. Build your plugin in its own GitHub repository.
-3. Keep UI code MudBlazor-first so it follows Quasar theme, spacing, dialogs, and
-   interaction conventions.
+3. Use native HTML/Razor controls and Quasar appearance tokens so plugin UI
+   follows the host's theme and interaction conventions. Scope plugin CSS.
 4. Add a `quasar-plugin.json` package manifest to your plugin repository.
 5. Add an XML descriptor to `Plugins/` in this repository. Use
    [SamplePlugin.xml](SamplePlugin.xml) as the reference.
@@ -86,6 +86,18 @@ Optional fields:
 - `AlternateVersions`
   Named alternate commits for test or custom builds.
 
+## Entity Viewer pin
+
+`Plugins/EntityViewer.xml` pins the native UI migration merged in
+[viewer #2](https://github.com/CometWorks/viewer/pull/2). Its dialogs, asset setup,
+and preview no longer require MudBlazor. The embedded viewer follows Quasar's
+appearance tokens with a fallback for older hosts.
+
+Quasar installs plugin source from the exact catalog commit, so this update does
+not require a separate viewer binary release. Once the catalog change is merged,
+update Entity Viewer from Quasar's UI plugin catalog and restart Quasar to load
+the updated plugin.
+
 ## Review Expectations
 
 Quasar UI plugins are trusted code running inside the Quasar process. Review
@@ -93,7 +105,7 @@ should check:
 
 - plugin source repository is public
 - commit is pinned and exists
-- plugin uses MudBlazor for ordinary UI
+- plugin follows Quasar appearance tokens and scopes its UI styles
 - built-in page/component replacements are declared clearly
 - companion Magnetar plugin usage is documented
 - static assets are scoped to the plugin
