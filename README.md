@@ -88,15 +88,23 @@ Optional fields:
 
 ## Entity Viewer pin
 
-`Plugins/EntityViewer.xml` pins the native UI migration merged in
-[viewer #2](https://github.com/CometWorks/viewer/pull/2). Its dialogs, asset setup,
-and preview no longer require MudBlazor. The embedded viewer follows Quasar's
-appearance tokens with a fallback for older hosts.
+`Plugins/EntityViewer.xml` pins the contextual replay implementation merged in
+[viewer #3](https://github.com/CometWorks/viewer/pull/3), commit
+`49fa9110b2d5f1e91dc588a43658817a009fa420`. It adds administrator-only history
+with a 1 Hz baseline, 5 Hz incident capture, up to 24 hours of retention, and
+recorded grid layouts/destruction for grids up to 50,000 blocks.
+
+This pin requires **Quasar 1.3.0.4 or newer**, the first release containing the
+background companion discovery API from
+[Quasar #198](https://github.com/CometWorks/quasar/pull/198). Update Quasar before
+updating Entity Viewer and its Magnetar companion.
 
 Quasar installs plugin source from the exact catalog commit, so this update does
 not require a separate viewer binary release. Once the catalog change is merged,
-update Entity Viewer from Quasar's UI plugin catalog and restart Quasar to load
-the updated plugin.
+update Entity Viewer from Quasar's UI plugin catalog, update its companion on the
+managed servers, and restart Quasar to load the updated plugin. Capture budgets,
+storage quotas, model availability and omitted rendering details are documented
+in the pinned source's [replay guide](https://github.com/CometWorks/viewer/blob/49fa9110b2d5f1e91dc588a43658817a009fa420/Docs/Replay.md).
 
 ## Review Expectations
 
