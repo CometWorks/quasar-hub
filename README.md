@@ -89,9 +89,11 @@ Optional fields:
 ## Entity Viewer pin
 
 `Plugins/EntityViewer.xml` pins the viewer fixes in
-[viewer #4](https://github.com/CometWorks/viewer/pull/4), commit
-`671ed3cf3d0e9f9ccd859a2692edeb7db6efb854`. Recording history is integrated into the main Entity Viewer
-panel, and entity-list alignment and the history navigation icon are corrected.
+[viewer #5](https://github.com/CometWorks/viewer/pull/5), commit
+`6013e94b4eb5d65f34d325e181fe496fb304cd47`. Recording history shares the main viewer’s
+textured materials and gravity orientation, preloads historical assets, renders
+character models with nametags, and provides hover diagnostics and an event log.
+The entity-list button also keeps its icon visible under table hover styling.
 The pin includes the existing administrator-only replay system with a 1 Hz
 baseline, 5 Hz incident capture, up to 24 hours of retention, and recorded grid
 layouts/destruction for grids up to 50,000 blocks.
@@ -106,7 +108,7 @@ not require a separate viewer binary release. Once the catalog change is merged,
 update Entity Viewer from Quasar's UI plugin catalog, update its companion on the
 managed servers, and restart Quasar to load the updated plugin. Capture budgets,
 storage quotas, model availability and omitted rendering details are documented
-in the pinned source's [replay guide](https://github.com/CometWorks/viewer/blob/671ed3cf3d0e9f9ccd859a2692edeb7db6efb854/Docs/Replay.md).
+in the pinned source's [replay guide](https://github.com/CometWorks/viewer/blob/6013e94b4eb5d65f34d325e181fe496fb304cd47/Docs/Replay.md).
 
 ## Review Expectations
 
