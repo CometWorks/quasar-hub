@@ -88,9 +88,16 @@ Optional fields:
 
 ## Entity Viewer pin
 
-`Plugins/EntityViewer.xml` pins Entity Viewer 0.1.12 from
-[viewer #12](https://github.com/CometWorks/viewer/pull/12), commit
-`19fdc09cc79dea3d82589ebf6f51dbb28c4dab81`. Incidents close after one minute without meaningful
+`Plugins/EntityViewer.xml` pins Entity Viewer 0.1.12 at commit
+`95143142acdebc9287aabab6c9a0f0dd8164c70c`, including
+[viewer #15](https://github.com/CometWorks/viewer/pull/15). Viewer iframe URLs,
+dialog module imports and asset-setup API requests preserve Quasar's hosted panel
+path prefix while continuing to support root hosting. Hosted enrollment requires
+the matching Quasar build from
+[Quasar #318](https://github.com/CometWorks/quasar/pull/318).
+
+The replay improvements from [viewer #12](https://github.com/CometWorks/viewer/pull/12)
+remain included. Incidents close after one minute without meaningful
 activity, continue up to a configurable duration (15 minutes by default, one hour
 maximum), and expand through connected activity from 500 m to a configurable
 10 km radius. The history view exposes these settings and recorded incident
@@ -99,7 +106,7 @@ boundaries, and applies context changes correctly when seeking backward.
 The companion reuses suppressed sample buffers, avoids replay-object allocations
 for unchanged block audits, caches layout dependencies, and reduces repeated worker
 and archive-index scans. Emitted evidence keeps independent ownership. Reproducible
-benchmarks and regression checks cover these optimizations in the source PR.
+benchmarks and regression checks cover these optimizations in viewer #12.
 
 Capture, terrain and query budgets remain bounded; very dense recordings can
 require shorter loaded ranges. Existing recordings remain readable. Recording
@@ -116,7 +123,7 @@ not require a separate viewer binary release. Once the catalog change is merged,
 update Entity Viewer from Quasar's UI plugin catalog, update its companion on the
 managed servers, and restart Quasar to load the updated plugin. Capture budgets,
 storage quotas, model availability and omitted rendering details are documented
-in the pinned source's [replay guide](https://github.com/CometWorks/viewer/blob/19fdc09cc79dea3d82589ebf6f51dbb28c4dab81/Docs/Replay.md).
+in the pinned source's [replay guide](https://github.com/CometWorks/viewer/blob/95143142acdebc9287aabab6c9a0f0dd8164c70c/Docs/Replay.md).
 
 ## Review Expectations
 
