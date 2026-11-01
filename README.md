@@ -97,12 +97,11 @@ Playback keeps node sessions, gaps, incident IDs, terrain and evidence separate.
 Standalone servers remain independent. Native viewer dialogs also wrap long paths.
 Older archives without cluster metadata join the group when their node reconnects.
 
-**Release dependency:** this revision requires Quasar's explicit `ClusterId`,
-`ClusterDisplayName` and `ClusterSlot` companion-discovery fields. They are absent
-from Quasar v1.3.2.14 and current upstream main. Keep this catalog upgrade pending
-until that support is released, then set `QuasarVersion` to the first compatible
-release before merging. The existing `>=1.3.0.4` range is not sufficient for this
-revision; it remains unchanged here because no compatible release exists yet.
+**Requires Quasar 1.4.0 or newer.** This revision uses the explicit `ClusterId`,
+`ClusterDisplayName` and `ClusterSlot` companion-discovery fields merged in
+[Quasar #337](https://github.com/CometWorks/quasar/pull/337) for Quasar 1.4.0.
+Update Quasar before updating Entity Viewer and its Magnetar companion. Older
+Quasar 1.3 releases cannot build this viewer revision.
 
 The hosted-panel fixes from
 [viewer #15](https://github.com/CometWorks/viewer/pull/15) remain included. Viewer iframe URLs,
@@ -127,12 +126,6 @@ Capture, terrain and query budgets remain bounded; very dense recordings can
 require shorter loaded ranges. Existing recordings remain readable. Recording
 stays opt-in and administrator-only, with a 1 Hz baseline, 5 Hz incident target,
 24-hour retention, historical geometry and window-lifetime asset caching.
-
-The earlier minimum, **Quasar 1.3.0.4**, introduced the background companion
-discovery API from
-[Quasar #198](https://github.com/CometWorks/quasar/pull/198). The new cluster metadata
-is an additional requirement as described above. Update Quasar to the compatible
-release before updating Entity Viewer and its Magnetar companion.
 
 Quasar installs plugin source from the exact catalog commit, so this update does
 not require a separate viewer binary release. Once the catalog change is merged,
