@@ -9,7 +9,7 @@
     <PluginKind>QuasarUiPlugin</PluginKind>
     <ProjectPath>src/CometWorks.EntityViewer.Quasar/CometWorks.EntityViewer.Quasar.csproj</ProjectPath>
     <PackageManifest>quasar-plugin.json</PackageManifest>
-    <QuasarVersion>&gt;=1.3.0.4</QuasarVersion>
+    <QuasarVersion>&gt;=1.4.0</QuasarVersion>
     <Recommended>true</Recommended>
     <ImplicitLoading>false</ImplicitLoading>
     <CompanionPluginIds>
