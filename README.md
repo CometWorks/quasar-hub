@@ -89,8 +89,23 @@ Optional fields:
 ## Entity Viewer pin
 
 `Plugins/EntityViewer.xml` pins Entity Viewer 0.1.12 at commit
-`95143142acdebc9287aabab6c9a0f0dd8164c70c`, including
-[viewer #15](https://github.com/CometWorks/viewer/pull/15). Viewer iframe URLs,
+`454dc0b5e5bf13d8a46fd09bb2b5d393f1979940`, including
+[viewer #17](https://github.com/CometWorks/viewer/pull/17). Each cluster appears as
+one server in recording history. Queries combine retained node archives, and a
+persisted recording policy applies to current, offline and newly discovered nodes.
+Playback keeps node sessions, gaps, incident IDs, terrain and evidence separate.
+Standalone servers remain independent. Native viewer dialogs also wrap long paths.
+Older archives without cluster metadata join the group when their node reconnects.
+
+**Release dependency:** this revision requires Quasar's explicit `ClusterId`,
+`ClusterDisplayName` and `ClusterSlot` companion-discovery fields. They are absent
+from Quasar v1.3.2.14 and current upstream main. Keep this catalog upgrade pending
+until that support is released, then set `QuasarVersion` to the first compatible
+release before merging. The existing `>=1.3.0.4` range is not sufficient for this
+revision; it remains unchanged here because no compatible release exists yet.
+
+The hosted-panel fixes from
+[viewer #15](https://github.com/CometWorks/viewer/pull/15) remain included. Viewer iframe URLs,
 dialog module imports and asset-setup API requests preserve Quasar's hosted panel
 path prefix while continuing to support root hosting. Hosted enrollment requires
 the matching Quasar build from
@@ -113,17 +128,18 @@ require shorter loaded ranges. Existing recordings remain readable. Recording
 stays opt-in and administrator-only, with a 1 Hz baseline, 5 Hz incident target,
 24-hour retention, historical geometry and window-lifetime asset caching.
 
-This pin requires **Quasar 1.3.0.4 or newer**, the first release containing the
-background companion discovery API from
-[Quasar #198](https://github.com/CometWorks/quasar/pull/198). Update Quasar before
-updating Entity Viewer and its Magnetar companion.
+The earlier minimum, **Quasar 1.3.0.4**, introduced the background companion
+discovery API from
+[Quasar #198](https://github.com/CometWorks/quasar/pull/198). The new cluster metadata
+is an additional requirement as described above. Update Quasar to the compatible
+release before updating Entity Viewer and its Magnetar companion.
 
 Quasar installs plugin source from the exact catalog commit, so this update does
 not require a separate viewer binary release. Once the catalog change is merged,
 update Entity Viewer from Quasar's UI plugin catalog, update its companion on the
 managed servers, and restart Quasar to load the updated plugin. Capture budgets,
 storage quotas, model availability and omitted rendering details are documented
-in the pinned source's [replay guide](https://github.com/CometWorks/viewer/blob/95143142acdebc9287aabab6c9a0f0dd8164c70c/Docs/Replay.md).
+in the pinned source's [replay guide](https://github.com/CometWorks/viewer/blob/454dc0b5e5bf13d8a46fd09bb2b5d393f1979940/Docs/Replay.md).
 
 ## Review Expectations
 
