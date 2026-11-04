@@ -88,20 +88,29 @@ Optional fields:
 
 ## Entity Viewer pin
 
-`Plugins/EntityViewer.xml` pins Entity Viewer 0.1.12 at commit
-`454dc0b5e5bf13d8a46fd09bb2b5d393f1979940`, including
-[viewer #17](https://github.com/CometWorks/viewer/pull/17). Each cluster appears as
-one server in recording history. Queries combine retained node archives, and a
-persisted recording policy applies to current, offline and newly discovered nodes.
-Playback keeps node sessions, gaps, incident IDs, terrain and evidence separate.
-Standalone servers remain independent. Native viewer dialogs also wrap long paths.
-Older archives without cluster metadata join the group when their node reconnects.
+`Plugins/EntityViewer.xml` prepares Entity Viewer **0.1.13** at commit
+`500419c347011a6457de51e7e35b9cd47c746bf8`. **Do not merge this candidate catalog
+pin until Quasar 1.6.0 is released and installed canaries pass.** The plugin source
+commit must already exist in the public viewer repository.
 
-**Requires Quasar 1.4.0 or newer.** This revision uses the explicit `ClusterId`,
-`ClusterDisplayName` and `ClusterSlot` companion-discovery fields merged in
-[Quasar #337](https://github.com/CometWorks/quasar/pull/337) for Quasar 1.4.0.
-Update Quasar before updating Entity Viewer and its Magnetar companion. Older
-Quasar 1.3 releases cannot build this viewer revision.
+**Requires Quasar 1.6.0 or newer.** Upgrade Quasar first, then update the viewer
+adapter, browser assets and Magnetar companion together and restart through the
+existing controls. `ImplicitLoading` remains false. All 15 safe scene, asset and
+history operations use Quasar browser SDK v1 with its auth rules, cancellation
+and transfer bounds. Public/local panel URL structures remain unchanged; this
+release retains HTTP transport. WebRTC follows separately.
+
+This pin includes upstream asset security fix `4eb0fd0`: sessions are issued only
+from authorized companion scenes or retained history, not browser-selected mod
+lists. Asset/path limits, response budgets and private diagnostics remain in
+force. The scene/history SDK envelope carries `{ data, assetSession }`; update
+browser assets with the adapter. Browser-selected session creation is removed.
+
+Cluster-aware recording/history and offline archives remain supported. The
+previous catalog pin was `454dc0b5e5bf13d8a46fd09bb2b5d393f1979940`; for rollback,
+prefer reviewed security revision `4eb0fd01a4b21fcc26c337e0cc89498d1f219a48`, with
+matching assets/companion, rather than removing that security fix. Quasar 1.6 can
+remain installed while the viewer is rolled back.
 
 The hosted-panel fixes from
 [viewer #15](https://github.com/CometWorks/viewer/pull/15) remain included. Viewer iframe URLs,
