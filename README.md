@@ -88,17 +88,23 @@ Optional fields:
 
 ## Entity Viewer pin
 
-`Plugins/EntityViewer.xml` prepares Entity Viewer **0.1.13** at commit
-`500419c347011a6457de51e7e35b9cd47c746bf8`. **Do not merge this candidate catalog
-pin until Quasar 1.6.0 is released and installed canaries pass.** The plugin source
-commit must already exist in the public viewer repository.
+`Plugins/EntityViewer.xml` pins Entity Viewer **0.1.13** at the public merged
+commit `54bd3cd237c12c2008f3a73b1456a4e384e01c4f`, including
+[viewer #19](https://github.com/CometWorks/viewer/pull/19). This catalog update
+follows the merged [Quasar WebRTC adapter](https://github.com/CometWorks/quasar/pull/353)
+and [Nebula relay](https://github.com/CometWorks/nebula/pull/6). The Viewer delta
+adds real transport verification and documentation; its production source is
+unchanged from the previous secure SDK pin.
 
 **Requires Quasar 1.6.0 or newer.** Upgrade Quasar first, then update the viewer
 adapter, browser assets and Magnetar companion together and restart through the
 existing controls. `ImplicitLoading` remains false. All 15 safe scene, asset and
 history operations use Quasar browser SDK v1 with its auth rules, cancellation
-and transfer bounds. Public/local panel URL structures remain unchanged; this
-release retains HTTP transport. WebRTC follows separately.
+and transfer bounds. The installed Quasar owns transport: compatible Nebula-hosted
+builds automatically use WebRTC with bounded TURN fallback, and local/offline
+access remains independent. The plugin exposes no transport toggle. Public/local
+panel URL structures remain unchanged. This pin does not deploy a relay or prove
+installed Steam, native Windows or representative Internet acceptance.
 
 This pin includes upstream asset security fix `4eb0fd0`: sessions are issued only
 from authorized companion scenes or retained history, not browser-selected mod
@@ -107,10 +113,10 @@ force. The scene/history SDK envelope carries `{ data, assetSession }`; update
 browser assets with the adapter. Browser-selected session creation is removed.
 
 Cluster-aware recording/history and offline archives remain supported. The
-previous catalog pin was `454dc0b5e5bf13d8a46fd09bb2b5d393f1979940`; for rollback,
-prefer reviewed security revision `4eb0fd01a4b21fcc26c337e0cc89498d1f219a48`, with
-matching assets/companion, rather than removing that security fix. Quasar 1.6 can
-remain installed while the viewer is rolled back.
+previous catalog pin was `500419c347011a6457de51e7e35b9cd47c746bf8`, which retains
+the SDK migration and asset security fix and remains the rollback target with
+matching assets/companion. Do not return to the older unsafe catalog revision.
+Quasar 1.6 or newer can remain installed while the viewer is rolled back.
 
 The hosted-panel fixes from
 [viewer #15](https://github.com/CometWorks/viewer/pull/15) remain included. Viewer iframe URLs,
@@ -141,7 +147,7 @@ not require a separate viewer binary release. Once the catalog change is merged,
 update Entity Viewer from Quasar's UI plugin catalog, update its companion on the
 managed servers, and restart Quasar to load the updated plugin. Capture budgets,
 storage quotas, model availability and omitted rendering details are documented
-in the pinned source's [replay guide](https://github.com/CometWorks/viewer/blob/454dc0b5e5bf13d8a46fd09bb2b5d393f1979940/Docs/Replay.md).
+in the pinned source's [replay guide](https://github.com/CometWorks/viewer/blob/54bd3cd237c12c2008f3a73b1456a4e384e01c4f/Docs/Replay.md).
 
 ## Review Expectations
 
