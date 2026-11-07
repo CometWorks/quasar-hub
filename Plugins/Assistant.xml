@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<PluginData
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:type="GitHubPlugin"
+>
+  <Id>9b1f4c2e-6a37-4d0b-8e52-3f7a1c9d0e64</Id>
+  <RepoId>CometWorks/quasar-assistant</RepoId>
+  <FriendlyName>Assistant</FriendlyName>
+  <Author>CometWorks</Author>
+  <Tooltip>An assistant for admins and players that reads and changes your servers through Quasar's operations.</Tooltip>
+  <Description>
+    An admin assistant for Quasar. Admins chat with it in a drawer on every page or on its own page. It answers
+    from Quasar's operations: it reads server status, logs, settings and players, and it changes things or
+    proposes changes for another admin to approve, as the admins allow per area. Every call is checked against
+    the asking admin's own permissions and written to Quasar's audit log. Bring your own models: an
+    OpenAI-compatible API (OpenRouter, OpenAI, llama.cpp, vLLM) or the Anthropic API, with failover between them.
+    Players can ask it with !ask in game and /ask on Discord about the server and their own grids, and it
+    restores lost grids within the limits and rules the admins set. Admins can also ask it on Discord, where it
+    only proposes changes. An optional monitor watches the servers, and on a problem it gathers evidence and
+    proposes a fix within a token budget. Grid restores need the Grid Backups Magnetar plugin on the servers.
+  </Description>
+  <PluginKind>QuasarUiPlugin</PluginKind>
+  <ProjectPath>src/QuasarAssistant.Quasar/QuasarAssistant.Quasar.csproj</ProjectPath>
+  <PackageManifest>quasar-plugin.json</PackageManifest>
+  <QuasarVersion>&gt;=1.6.0.19</QuasarVersion>
+  <CompanionPluginIds>
+    <CompanionPluginId>9AC2F6A8-B8A7-4250-8814-BADE62C5CF3C</CompanionPluginId>
+  </CompanionPluginIds>
+  <Commit>2eca6f98aea285a685c0d1fd7e88df21936c6925</Commit>
+</PluginData>
