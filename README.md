@@ -90,7 +90,7 @@ Optional fields:
 
 `Plugins/KingOfTheHill.xml` pins **King of the Hill 0.1.1** from the public,
 AGPL-3.0-only [OwendB1/quasar-koth](https://github.com/OwendB1/quasar-koth)
-repository at `6296b61408092947422d189f1ad6bf118e225f73`.
+repository at `6236411de26eff4fd01c6ca7b4a889e617077bc2`.
 
 Requires **Quasar 1.6.0.54 or newer** and Workshop mod **2388326362** in the world.
 Refresh Quasar's UI Plugins catalog, install **King of the Hill**, then restart
@@ -109,7 +109,7 @@ handler from client-sent reset packets. Standalone resets verify an XML backup
 before clearing scores. Nexus and Quasar cluster resets are refused; node score
 views do not sum replicated scores. Local builds and 53 automated checks pass;
 live game/Discord acceptance remains a separate step described in the plugin's
-[acceptance guide](https://github.com/OwendB1/quasar-koth/blob/6296b61408092947422d189f1ad6bf118e225f73/docs/LiveAcceptance.md).
+[acceptance guide](https://github.com/OwendB1/quasar-koth/blob/6236411de26eff4fd01c6ca7b4a889e617077bc2/docs/LiveAcceptance.md).
 
 ## Entity Viewer pin
 

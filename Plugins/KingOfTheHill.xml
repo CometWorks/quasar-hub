@@ -28,5 +28,5 @@
   </CompanionPluginIds>
   <Platforms>Windows,Linux</Platforms>
   <ImplicitLoading>false</ImplicitLoading>
-  <Commit>6296b61408092947422d189f1ad6bf118e225f73</Commit>
+  <Commit>6236411de26eff4fd01c6ca7b4a889e617077bc2</Commit>
 </PluginData>
