@@ -7,7 +7,7 @@
   <Id>ac6149e7-8a0d-4dca-b470-7de4bed50e1f</Id>
   <RepoId>OwendB1/quasar-koth</RepoId>
   <FriendlyName>King of the Hill</FriendlyName>
-  <Author>Owen de Bree</Author>
+  <Author>OwendB1</Author>
   <Tooltip>Live KOTH scores, a dedicated Discord channel through Quasar's bot, and backed-up score resets.</Tooltip>
   <Description>
     Integrates the King of the Hill Workshop mod (2388326362) with Quasar. Adds a native KOTH page with
@@ -28,5 +28,5 @@
   </CompanionPluginIds>
   <Platforms>Windows,Linux</Platforms>
   <ImplicitLoading>false</ImplicitLoading>
-  <Commit>f5e3bfc484417490939022fa1f417e0ebea2e4e8</Commit>
+  <Commit>abe7a114a36f0a9fe66d81ed869dc4bc66e73d3b</Commit>
 </PluginData>
