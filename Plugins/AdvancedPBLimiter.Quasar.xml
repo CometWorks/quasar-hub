@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<PluginData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GitHubPlugin">
+    <!-- QuasarHub descriptor, copy it to the Plugins folder of the quasar-hub repository when publishing.
+         The Magnetar plugin has its own descriptor (AdvancedPBLimiter.xml) for MagnetarHub. -->
+
+    <!-- The ID of your plugin, never change this -->
+    <Id>c3a7e1d2-5b84-4f6e-9d21-7e4b8a60f1c5</Id>
+
+    <RepoId>buttheadbob/Advanced_PB_Limiter</RepoId>
+
+    <FriendlyName>Advanced PB Limiter</FriendlyName>
+
+    <Author>SentorX</Author>
+
+    <Tooltip>Live view, settings profiles and reports for the Advanced PB Limiter on your servers</Tooltip>
+
+    <Description>
+Live view, profiles and reports for the Advanced PB Limiter Magnetar plugin.
+
+Live view: every tracked programmable block and player on a server, with run times, offences and memory. Turn off a
+block or all of a player's blocks. Needs permission to control servers.
+
+Profiles: save a server's settings and privileged players under a name and apply them to other servers. Applying
+replaces both. A server that is offline or still loading gets the profile when it is ready. Needs permission to edit
+configurations. Limits are still set on the server's Plugins page.
+
+Generate report: one text file for the servers you choose.
+
+Needs the Advanced PB Limiter Magnetar plugin on the servers. Includes a small companion Magnetar plugin
+(advancedpblimiter.quasar) that Quasar adds to managed servers; restart servers that were running when this plugin was
+enabled. Each cluster node shows as its own server.
+    </Description>
+
+    <PluginKind>QuasarUiPlugin</PluginKind>
+
+    <ProjectPath>QuasarPlugin/AdvancedPBLimiter.Quasar/AdvancedPBLimiter.Quasar.csproj</ProjectPath>
+
+    <PackageManifest>quasar-plugin.json</PackageManifest>
+
+    <QuasarVersion>&gt;=1.4.0</QuasarVersion>
+
+    <CompanionPluginIds>
+        <CompanionPluginId>advancedpblimiter.quasar</CompanionPluginId>
+    </CompanionPluginIds>
+
+    <Commit>9bf3e1ec12046f5efb05a9c8c347da247401fbb7</Commit>
+</PluginData>
