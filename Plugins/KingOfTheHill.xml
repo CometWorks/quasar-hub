@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<PluginData
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:type="GitHubPlugin"
+>
+  <Id>ac6149e7-8a0d-4dca-b470-7de4bed50e1f</Id>
+  <RepoId>OwendB1/quasar-koth</RepoId>
+  <FriendlyName>King of the Hill</FriendlyName>
+  <Author>Owen de Bree</Author>
+  <Tooltip>Live KOTH scores, a dedicated Discord channel through Quasar's bot, and backed-up score resets.</Tooltip>
+  <Description>
+    Integrates the King of the Hill Workshop mod (2388326362) with Quasar. Adds a native KOTH page with
+    live faction scores per server or node, dedicated-channel capture announcements through Quasar's
+    existing Discord bot, player score commands, and authorized standalone score resets with verified
+    XML backups. Includes its own Magnetar companion, which also blocks client-sent plugin reset packets
+    in the supported mod. Keep the Workshop mod installed in your world. Configure the KOTH channel on
+    the plugin page; no separate bot or webhook is required. Nexus and Quasar cluster resets are refused.
+    Requires Quasar 1.6.0.54 or newer. Restart Quasar and managed game servers after installation.
+    Source is AGPL-3.0-only. See the repository for compatibility limits and live acceptance checks.
+  </Description>
+  <PluginKind>QuasarUiPlugin</PluginKind>
+  <ProjectPath>src/Koth.Quasar/Koth.Quasar.csproj</ProjectPath>
+  <PackageManifest>quasar-plugin.json</PackageManifest>
+  <QuasarVersion>&gt;=1.6.0.54</QuasarVersion>
+  <CompanionPluginIds>
+    <CompanionPluginId>owendb.koth</CompanionPluginId>
+  </CompanionPluginIds>
+  <Platforms>Windows,Linux</Platforms>
+  <ImplicitLoading>false</ImplicitLoading>
+  <Commit>f5e3bfc484417490939022fa1f417e0ebea2e4e8</Commit>
+</PluginData>
