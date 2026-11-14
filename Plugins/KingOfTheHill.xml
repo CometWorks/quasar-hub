@@ -10,8 +10,8 @@
   <Author>OwendB1</Author>
   <Tooltip>Live KOTH scores, a dedicated Discord channel through Quasar's bot, and backed-up score resets.</Tooltip>
   <Description>
-    Integrates the King of the Hill Workshop mod (2388326362) with Quasar. Adds a native KOTH page with
-    live faction scores per server or node, dedicated-channel capture announcements through Quasar's
+    Integrates the King of the Hill Workshop mod (2388326362) with Quasar. Adds a full-width KOTH page with
+    per-server expansion panels, automatically updated faction scores, and capture announcements through Quasar's
     existing Discord bot, player score commands, and authorized standalone score resets with verified
     XML backups. Includes its own Magnetar companion, which also blocks client-sent plugin reset packets
     in the supported mod. Keep the Workshop mod installed in your world. Configure the KOTH channel on
@@ -28,5 +28,5 @@
   </CompanionPluginIds>
   <Platforms>Windows,Linux</Platforms>
   <ImplicitLoading>false</ImplicitLoading>
-  <Commit>abe7a114a36f0a9fe66d81ed869dc4bc66e73d3b</Commit>
+  <Commit>6296b61408092947422d189f1ad6bf118e225f73</Commit>
 </PluginData>

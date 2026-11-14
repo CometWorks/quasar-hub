@@ -88,9 +88,9 @@ Optional fields:
 
 ## King of the Hill
 
-`Plugins/KingOfTheHill.xml` pins **King of the Hill 0.1.0** from the public,
+`Plugins/KingOfTheHill.xml` pins **King of the Hill 0.1.1** from the public,
 AGPL-3.0-only [OwendB1/quasar-koth](https://github.com/OwendB1/quasar-koth)
-repository at `abe7a114a36f0a9fe66d81ed869dc4bc66e73d3b`.
+repository at `6296b61408092947422d189f1ad6bf118e225f73`.
 
 Requires **Quasar 1.6.0.54 or newer** and Workshop mod **2388326362** in the world.
 Refresh Quasar's UI Plugins catalog, install **King of the Hill**, then restart
@@ -98,12 +98,18 @@ Quasar and the managed game servers to load the UI and bundled companion.
 Configure a dedicated KOTH channel on the plugin page; announcements and commands
 use Quasar's existing bot. Installation remains opt-in (`ImplicitLoading=false`).
 
+The KOTH page follows Quasar's normal content width and heading styles. Servers
+use independent expansion panels instead of a dropdown and Refresh button.
+Expanded panels and connected-server discovery update every five seconds.
+Each panel keeps its own score and reset state, so a slow server does not block
+other panels and world changes invalidate only the affected confirmation.
+
 The companion reads live scores and protects the supported mod's plugin-message
 handler from client-sent reset packets. Standalone resets verify an XML backup
 before clearing scores. Nexus and Quasar cluster resets are refused; node score
-views do not sum replicated scores. Local builds and 43 automated checks pass;
+views do not sum replicated scores. Local builds and 53 automated checks pass;
 live game/Discord acceptance remains a separate step described in the plugin's
-[acceptance guide](https://github.com/OwendB1/quasar-koth/blob/abe7a114a36f0a9fe66d81ed869dc4bc66e73d3b/docs/LiveAcceptance.md).
+[acceptance guide](https://github.com/OwendB1/quasar-koth/blob/6296b61408092947422d189f1ad6bf118e225f73/docs/LiveAcceptance.md).
 
 ## Entity Viewer pin
 
