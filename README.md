@@ -114,11 +114,15 @@ live game/Discord acceptance remains a separate step described in the plugin's
 ## Entity Viewer pin
 
 `Plugins/EntityViewer.xml` pins Entity Viewer **0.1.13** at the public merged
-commit `e48b2b368e4234e90c7c6e6c7b967a6af1cf0ba0`, including
-[viewer #21](https://github.com/CometWorks/viewer/pull/21). Unavailable entities
-show a disabled, crossed-out eye with an explanatory tooltip. The icon stays
-muted when its row is hovered or selected; supported entities retain the normal
-eye button.
+commit `abdcaaad17a5c9a54aff7025abafa61b35397f94`.
+[Viewer #22](https://github.com/CometWorks/viewer/pull/22) lets Firefox reuse
+the selected Content and Mods folders when opening another grid from the same
+Entities list. Reloading the page requires selecting the folders again.
+
+[Viewer #21](https://github.com/CometWorks/viewer/pull/21) shows a disabled,
+crossed-out eye with an explanatory tooltip for unavailable entities. The icon
+stays muted when its row is hovered or selected. Supported entities retain the
+normal eye button.
 
 The queued asset loading from
 [viewer #20](https://github.com/CometWorks/viewer/pull/20) remains included. Remote model, LOD,
@@ -184,7 +188,7 @@ not require a separate viewer binary release. Once the catalog change is merged,
 update Entity Viewer from Quasar's UI plugin catalog, update its companion on the
 managed servers, and restart Quasar to load the updated plugin. Capture budgets,
 storage quotas, model availability and omitted rendering details are documented
-in the pinned source's [replay guide](https://github.com/CometWorks/viewer/blob/e48b2b368e4234e90c7c6e6c7b967a6af1cf0ba0/Docs/Replay.md).
+in the pinned source's [replay guide](https://github.com/CometWorks/viewer/blob/abdcaaad17a5c9a54aff7025abafa61b35397f94/Docs/Replay.md).
 
 ## Review Expectations
 
