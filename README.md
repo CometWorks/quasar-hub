@@ -114,8 +114,14 @@ live game/Discord acceptance remains a separate step described in the plugin's
 ## Entity Viewer pin
 
 `Plugins/EntityViewer.xml` pins Entity Viewer **0.1.13** at the public merged
-commit `dae5b2c919b7d4113422ca7d523bdea45bdf9977`, including
-[viewer #20](https://github.com/CometWorks/viewer/pull/20). Remote model, LOD,
+commit `e48b2b368e4234e90c7c6e6c7b967a6af1cf0ba0`, including
+[viewer #21](https://github.com/CometWorks/viewer/pull/21). Unavailable entities
+show a disabled, crossed-out eye with an explanatory tooltip. The icon stays
+muted when its row is hovered or selected; supported entities retain the normal
+eye button.
+
+The queued asset loading from
+[viewer #20](https://github.com/CometWorks/viewer/pull/20) remains included. Remote model, LOD,
 texture and font loads share a queue with at most two active asset operations per
 frame. Explicit HTTP 429 responses during asset resolution or download opening
 retry with bounded backoff for about one minute. Exhausted throttling remains an
@@ -144,7 +150,7 @@ force. The scene/history SDK envelope carries `{ data, assetSession }`; update
 browser assets with the adapter. Browser-selected session creation is removed.
 
 Cluster-aware recording/history and offline archives remain supported. The
-previous catalog pin was `54bd3cd237c12c2008f3a73b1456a4e384e01c4f`, which retains
+previous catalog pin was `dae5b2c919b7d4113422ca7d523bdea45bdf9977`, which retains
 the SDK migration and asset security fix and remains the rollback target with
 matching assets/companion. Do not return to the older unsafe catalog revision.
 Quasar 1.6 or newer can remain installed while the viewer is rolled back.
@@ -178,7 +184,7 @@ not require a separate viewer binary release. Once the catalog change is merged,
 update Entity Viewer from Quasar's UI plugin catalog, update its companion on the
 managed servers, and restart Quasar to load the updated plugin. Capture budgets,
 storage quotas, model availability and omitted rendering details are documented
-in the pinned source's [replay guide](https://github.com/CometWorks/viewer/blob/dae5b2c919b7d4113422ca7d523bdea45bdf9977/Docs/Replay.md).
+in the pinned source's [replay guide](https://github.com/CometWorks/viewer/blob/e48b2b368e4234e90c7c6e6c7b967a6af1cf0ba0/Docs/Replay.md).
 
 ## Review Expectations
 
