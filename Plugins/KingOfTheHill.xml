@@ -16,17 +16,17 @@
     XML backups. Includes its own Magnetar companion, which also blocks client-sent plugin reset packets
     in the supported mod. Keep the Workshop mod installed in your world. Configure the KOTH channel on
     the plugin page; no separate bot or webhook is required. Nexus and Quasar cluster resets are refused.
-    Requires Quasar 1.6.0.54 or newer. Restart Quasar and managed game servers after installation.
+    Requires Quasar 1.7.0 or newer. Restart Quasar and managed game servers after installation.
     Source is AGPL-3.0-only. See the repository for compatibility limits and live acceptance checks.
   </Description>
   <PluginKind>QuasarUiPlugin</PluginKind>
   <ProjectPath>src/Koth.Quasar/Koth.Quasar.csproj</ProjectPath>
   <PackageManifest>quasar-plugin.json</PackageManifest>
-  <QuasarVersion>&gt;=1.6.0.54</QuasarVersion>
+  <QuasarVersion>&gt;=1.7.0</QuasarVersion>
   <CompanionPluginIds>
     <CompanionPluginId>owendb.koth</CompanionPluginId>
   </CompanionPluginIds>
   <Platforms>Windows,Linux</Platforms>
   <ImplicitLoading>false</ImplicitLoading>
-  <Commit>6236411de26eff4fd01c6ca7b4a889e617077bc2</Commit>
+  <Commit>0cd14e65907eeabc8092e2cabe2868fc569b6bc8</Commit>
 </PluginData>
