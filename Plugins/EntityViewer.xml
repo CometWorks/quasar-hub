@@ -9,11 +9,11 @@
     <PluginKind>QuasarUiPlugin</PluginKind>
     <ProjectPath>src/CometWorks.EntityViewer.Quasar/CometWorks.EntityViewer.Quasar.csproj</ProjectPath>
     <PackageManifest>quasar-plugin.json</PackageManifest>
-    <QuasarVersion>&gt;=1.6.0</QuasarVersion>
+    <QuasarVersion>&gt;=1.7.0</QuasarVersion>
     <Recommended>true</Recommended>
     <ImplicitLoading>false</ImplicitLoading>
     <CompanionPluginIds>
         <CompanionPluginId>cometworks.entityviewer</CompanionPluginId>
     </CompanionPluginIds>
-    <Commit>abdcaaad17a5c9a54aff7025abafa61b35397f94</Commit>
+    <Commit>5b4b0f45d86cf6ec27477a197792c7c93f48e803</Commit>
 </PluginData>

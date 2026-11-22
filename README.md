@@ -88,11 +88,11 @@ Optional fields:
 
 ## King of the Hill
 
-`Plugins/KingOfTheHill.xml` pins **King of the Hill 0.1.1** from the public,
+`Plugins/KingOfTheHill.xml` pins **King of the Hill 0.2.0** from the public,
 AGPL-3.0-only [OwendB1/quasar-koth](https://github.com/OwendB1/quasar-koth)
-repository at `6236411de26eff4fd01c6ca7b4a889e617077bc2`.
+repository at `0cd14e65907eeabc8092e2cabe2868fc569b6bc8`.
 
-Requires **Quasar 1.6.0.54 or newer** and Workshop mod **2388326362** in the world.
+Requires **Quasar 1.7.0 or newer** and Workshop mod **2388326362** in the world.
 Refresh Quasar's UI Plugins catalog, install **King of the Hill**, then restart
 Quasar and the managed game servers to load the UI and bundled companion.
 Configure a dedicated KOTH channel on the plugin page; announcements and commands
@@ -107,14 +107,13 @@ other panels and world changes invalidate only the affected confirmation.
 The companion reads live scores and protects the supported mod's plugin-message
 handler from client-sent reset packets. Standalone resets verify an XML backup
 before clearing scores. Nexus and Quasar cluster resets are refused; node score
-views do not sum replicated scores. Local builds and 53 automated checks pass;
-live game/Discord acceptance remains a separate step described in the plugin's
-[acceptance guide](https://github.com/OwendB1/quasar-koth/blob/6236411de26eff4fd01c6ca7b4a889e617077bc2/docs/LiveAcceptance.md).
+views do not sum replicated scores. Live game and Discord checks are described in the plugin's
+[acceptance guide](https://github.com/OwendB1/quasar-koth/blob/0cd14e65907eeabc8092e2cabe2868fc569b6bc8/docs/LiveAcceptance.md).
 
 ## Entity Viewer pin
 
-`Plugins/EntityViewer.xml` pins Entity Viewer **0.1.13** at the public merged
-commit `abdcaaad17a5c9a54aff7025abafa61b35397f94`.
+`Plugins/EntityViewer.xml` pins Entity Viewer **0.1.14** at the public merged
+commit `5b4b0f45d86cf6ec27477a197792c7c93f48e803`.
 [Viewer #22](https://github.com/CometWorks/viewer/pull/22) lets Firefox reuse
 the selected Content and Mods folders when opening another grid from the same
 Entities list. Reloading the page requires selecting the folders again.
@@ -132,20 +131,14 @@ retry with bounded backoff for about one minute. Exhausted throttling remains an
 error instead of being cached as a missing asset; interrupted downloads are not
 replayed. Local folder loads retain their existing parallelism.
 
-The transport verification from
-[viewer #19](https://github.com/CometWorks/viewer/pull/19), the merged
-[Quasar WebRTC adapter](https://github.com/CometWorks/quasar/pull/353) and
-[Nebula relay](https://github.com/CometWorks/nebula/pull/6) remain included.
+[Viewer #23](https://github.com/CometWorks/viewer/pull/23) moves the entity
+columns into a browser assembly loaded by the Quasar WASM dashboard.
 
-**Requires Quasar 1.6.0 or newer.** Upgrade Quasar first, then update the viewer
-adapter, browser assets and Magnetar companion together and restart through the
-existing controls. `ImplicitLoading` remains false. All 15 safe scene, asset and
-history operations use Quasar browser SDK v1 with its auth rules, cancellation
-and transfer bounds. The installed Quasar owns transport: compatible Nebula-hosted
-builds automatically use WebRTC with bounded TURN fallback, and local/offline
-access remains independent. The plugin exposes no transport toggle. Public/local
-panel URL structures remain unchanged. This pin does not deploy a relay or prove
-installed Steam, native Windows or representative Internet acceptance.
+**Requires Quasar 1.7.0 or newer.** Upgrade Quasar first, then update the viewer
+adapter, browser assets and Magnetar companion together. Viewer remains opt-in.
+Its scene, asset and history operations use the authenticated Quasar browser SDK.
+Nebula-hosted panels can start over HTTPS and send new work over WebRTC once a
+direct connection is confirmed. The hosted tunnel has a shared 20 Mbit/s limit.
 
 This pin includes upstream asset security fix `4eb0fd0`: sessions are issued only
 from authorized companion scenes or retained history, not browser-selected mod
@@ -153,11 +146,9 @@ lists. Asset/path limits, response budgets and private diagnostics remain in
 force. The scene/history SDK envelope carries `{ data, assetSession }`; update
 browser assets with the adapter. Browser-selected session creation is removed.
 
-Cluster-aware recording/history and offline archives remain supported. The
-previous catalog pin was `dae5b2c919b7d4113422ca7d523bdea45bdf9977`, which retains
-the SDK migration and asset security fix and remains the rollback target with
-matching assets/companion. Do not return to the older unsafe catalog revision.
-Quasar 1.6 or newer can remain installed while the viewer is rolled back.
+Cluster-aware recording/history and offline archives remain supported. For a
+rollback to Quasar 1.6, use the previous Viewer 0.1.13 adapter, browser assets
+and companion from commit `abdcaaad17a5c9a54aff7025abafa61b35397f94`.
 
 The hosted-panel fixes from
 [viewer #15](https://github.com/CometWorks/viewer/pull/15) remain included. Viewer iframe URLs,
@@ -188,7 +179,7 @@ not require a separate viewer binary release. Once the catalog change is merged,
 update Entity Viewer from Quasar's UI plugin catalog, update its companion on the
 managed servers, and restart Quasar to load the updated plugin. Capture budgets,
 storage quotas, model availability and omitted rendering details are documented
-in the pinned source's [replay guide](https://github.com/CometWorks/viewer/blob/abdcaaad17a5c9a54aff7025abafa61b35397f94/Docs/Replay.md).
+in the pinned source's [replay guide](https://github.com/CometWorks/viewer/blob/5b4b0f45d86cf6ec27477a197792c7c93f48e803/Docs/Replay.md).
 
 ## Review Expectations
 
