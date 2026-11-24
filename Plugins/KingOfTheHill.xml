@@ -16,7 +16,7 @@
     XML backups. Includes its own Magnetar companion, which also blocks client-sent plugin reset packets
     in the supported mod. Keep the Workshop mod installed in your world. Configure the KOTH channel on
     the plugin page; no separate bot or webhook is required. Nexus and Quasar cluster resets are refused.
-    Requires Quasar 1.7.0 or newer. Restart Quasar and managed game servers after installation.
+    Restart Quasar and managed game servers after installation.
     Source is AGPL-3.0-only. See the repository for compatibility limits and live acceptance checks.
   </Description>
   <PluginKind>QuasarUiPlugin</PluginKind>
