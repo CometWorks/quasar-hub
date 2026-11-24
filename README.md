@@ -88,11 +88,12 @@ Optional fields:
 
 ## King of the Hill
 
-`Plugins/KingOfTheHill.xml` pins **King of the Hill 0.2.0** from the public,
+`Plugins/KingOfTheHill.xml` pins King of the Hill from the public,
 AGPL-3.0-only [OwendB1/quasar-koth](https://github.com/OwendB1/quasar-koth)
-repository at `0cd14e65907eeabc8092e2cabe2868fc569b6bc8`.
+repository. Its `Commit` and `QuasarVersion` are the pinned revision and the
+minimum Quasar version; update only the descriptor when the pin moves.
 
-Requires **Quasar 1.7.0 or newer** and Workshop mod **2388326362** in the world.
+Requires Workshop mod **2388326362** in the world.
 Refresh Quasar's UI Plugins catalog, install **King of the Hill**, then restart
 Quasar and the managed game servers to load the UI and bundled companion.
 Configure a dedicated KOTH channel on the plugin page; announcements and commands
@@ -107,8 +108,14 @@ other panels and world changes invalidate only the affected confirmation.
 The companion reads live scores and protects the supported mod's plugin-message
 handler from client-sent reset packets. Standalone resets verify an XML backup
 before clearing scores. Nexus and Quasar cluster resets are refused; node score
-views do not sum replicated scores. Live game and Discord checks are described in the plugin's
-[acceptance guide](https://github.com/OwendB1/quasar-koth/blob/0cd14e65907eeabc8092e2cabe2868fc569b6bc8/docs/LiveAcceptance.md).
+views do not sum replicated scores.
+
+The companion answers score polls from a copy it refreshes about once a second
+on its own game tick, so polls never wait for the game thread.
+During a world save or a physics stall the panel says "Scores are N s old; the
+server's game thread is busy." instead of timing out, and a stalled server no
+longer delays announcements from the others. Live game and Discord checks are described in the plugin's
+[acceptance guide](https://github.com/OwendB1/quasar-koth/blob/main/docs/LiveAcceptance.md).
 
 ## Entity Viewer pin
 
