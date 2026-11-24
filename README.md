@@ -88,11 +88,12 @@ Optional fields:
 
 ## King of the Hill
 
-`Plugins/KingOfTheHill.xml` pins **King of the Hill 0.2.0** from the public,
+`Plugins/KingOfTheHill.xml` pins King of the Hill from the public,
 AGPL-3.0-only [OwendB1/quasar-koth](https://github.com/OwendB1/quasar-koth)
-repository at `0cd14e65907eeabc8092e2cabe2868fc569b6bc8`.
+repository. Its `Commit` and `QuasarVersion` are the pinned revision and the
+minimum Quasar version; update only the descriptor when the pin moves.
 
-Requires **Quasar 1.7.0 or newer** and Workshop mod **2388326362** in the world.
+Requires Workshop mod **2388326362** in the world.
 Refresh Quasar's UI Plugins catalog, install **King of the Hill**, then restart
 Quasar and the managed game servers to load the UI and bundled companion.
 Configure a dedicated KOTH channel on the plugin page; announcements and commands
@@ -107,79 +108,63 @@ other panels and world changes invalidate only the affected confirmation.
 The companion reads live scores and protects the supported mod's plugin-message
 handler from client-sent reset packets. Standalone resets verify an XML backup
 before clearing scores. Nexus and Quasar cluster resets are refused; node score
-views do not sum replicated scores. Live game and Discord checks are described in the plugin's
-[acceptance guide](https://github.com/OwendB1/quasar-koth/blob/0cd14e65907eeabc8092e2cabe2868fc569b6bc8/docs/LiveAcceptance.md).
+views do not sum replicated scores.
 
-## Entity Viewer pin
+The companion answers score polls from a copy it refreshes about once a second
+on its own game tick, so polls never wait for the game thread.
+During a world save or a physics stall the panel says "Scores are N s old; the
+server's game thread is busy." instead of timing out, and a stalled server no
+longer delays announcements from the others. Live game and Discord checks are described in the plugin's
+[acceptance guide](https://github.com/OwendB1/quasar-koth/blob/main/docs/LiveAcceptance.md).
 
-`Plugins/EntityViewer.xml` pins Entity Viewer **0.1.14** at the public merged
-commit `5b4b0f45d86cf6ec27477a197792c7c93f48e803`.
-[Viewer #22](https://github.com/CometWorks/viewer/pull/22) lets Firefox reuse
-the selected Content and Mods folders when opening another grid from the same
-Entities list. Reloading the page requires selecting the folders again.
+## Entity Viewer
 
-[Viewer #21](https://github.com/CometWorks/viewer/pull/21) shows a disabled,
-crossed-out eye with an explanatory tooltip for unavailable entities. The icon
-stays muted when its row is hovered or selected. Supported entities retain the
-normal eye button.
+`Plugins/EntityViewer.xml` pins Entity Viewer from the public
+[CometWorks/viewer](https://github.com/CometWorks/viewer) repository. Its
+`Commit` and `QuasarVersion` are the pinned revision and the minimum Quasar
+version; update only the descriptor when the pin moves. Viewer is opt-in.
 
-The queued asset loading from
-[viewer #20](https://github.com/CometWorks/viewer/pull/20) remains included. Remote model, LOD,
-texture and font loads share a queue with at most two active asset operations per
-frame. Explicit HTTP 429 responses during asset resolution or download opening
-retry with bounded backoff for about one minute. Exhausted throttling remains an
-error instead of being cached as a missing asset; interrupted downloads are not
-replayed. Local folder loads retain their existing parallelism.
+Update the viewer adapter, browser assets and Magnetar companion together: the
+scene/history SDK envelope carries `{ data, assetSession }`, and asset sessions
+are issued only from authorized companion scenes or retained history, never from
+browser-selected mod lists. Asset/path limits, response budgets and private
+diagnostics apply. Scene, asset and history operations use the authenticated
+Quasar browser SDK; the entity columns are a browser assembly loaded by the
+Quasar WASM dashboard. Nebula-hosted panels can start over HTTPS and move new
+work to WebRTC once a direct connection is confirmed; the hosted tunnel has a
+shared 20 Mbit/s limit. Viewer iframe URLs, dialog module imports and
+asset-setup requests keep Quasar's hosted panel path prefix and also work at the
+root.
 
-[Viewer #23](https://github.com/CometWorks/viewer/pull/23) moves the entity
-columns into a browser assembly loaded by the Quasar WASM dashboard.
+In the Entities list, Firefox reuses the selected Content and Mods folders when
+opening another grid; reloading the page needs the folders selected again.
+Unavailable entities show a disabled, crossed-out eye with an explanatory
+tooltip.
 
-**Requires Quasar 1.7.0 or newer.** Upgrade Quasar first, then update the viewer
-adapter, browser assets and Magnetar companion together. Viewer remains opt-in.
-Its scene, asset and history operations use the authenticated Quasar browser SDK.
-Nebula-hosted panels can start over HTTPS and send new work over WebRTC once a
-direct connection is confirmed. The hosted tunnel has a shared 20 Mbit/s limit.
+Remote model, LOD, texture and font loads share a queue with at most two active
+asset operations per frame. HTTP 429 responses during asset resolution or
+download opening retry with bounded backoff for about one minute; exhausted
+throttling stays an error instead of being cached as a missing asset, and
+interrupted downloads are not replayed. Local folder loads keep their own
+parallelism.
 
-This pin includes upstream asset security fix `4eb0fd0`: sessions are issued only
-from authorized companion scenes or retained history, not browser-selected mod
-lists. Asset/path limits, response budgets and private diagnostics remain in
-force. The scene/history SDK envelope carries `{ data, assetSession }`; update
-browser assets with the adapter. Browser-selected session creation is removed.
+Recording is opt-in and administrator-only, with a 1 Hz baseline, a 5 Hz incident
+target, 24-hour retention, historical geometry and window-lifetime asset caching.
+Cluster-aware recording/history and offline archives are supported, and existing
+recordings stay readable. Incidents close after one minute without meaningful
+activity, last up to a configurable duration (15 minutes by default, one hour
+maximum), and grow through connected activity from 500 m up to a configurable
+10 km radius. The history view shows these settings and recorded incident
+boundaries, and seeking backward applies context changes correctly. Capture,
+terrain and query budgets are bounded, so very dense recordings can need shorter
+loaded ranges.
 
-Cluster-aware recording/history and offline archives remain supported. For a
-rollback to Quasar 1.6, use the previous Viewer 0.1.13 adapter, browser assets
-and companion from commit `abdcaaad17a5c9a54aff7025abafa61b35397f94`.
-
-The hosted-panel fixes from
-[viewer #15](https://github.com/CometWorks/viewer/pull/15) remain included. Viewer iframe URLs,
-dialog module imports and asset-setup API requests preserve Quasar's hosted panel
-path prefix while continuing to support root hosting. Hosted enrollment requires
-the matching Quasar build from
-[Quasar #318](https://github.com/CometWorks/quasar/pull/318).
-
-The replay improvements from [viewer #12](https://github.com/CometWorks/viewer/pull/12)
-remain included. Incidents close after one minute without meaningful
-activity, continue up to a configurable duration (15 minutes by default, one hour
-maximum), and expand through connected activity from 500 m to a configurable
-10 km radius. The history view exposes these settings and recorded incident
-boundaries, and applies context changes correctly when seeking backward.
-
-The companion reuses suppressed sample buffers, avoids replay-object allocations
-for unchanged block audits, caches layout dependencies, and reduces repeated worker
-and archive-index scans. Emitted evidence keeps independent ownership. Reproducible
-benchmarks and regression checks cover these optimizations in viewer #12.
-
-Capture, terrain and query budgets remain bounded; very dense recordings can
-require shorter loaded ranges. Existing recordings remain readable. Recording
-stays opt-in and administrator-only, with a 1 Hz baseline, 5 Hz incident target,
-24-hour retention, historical geometry and window-lifetime asset caching.
-
-Quasar installs plugin source from the exact catalog commit, so this update does
-not require a separate viewer binary release. Once the catalog change is merged,
+Quasar installs plugin source from the exact catalog commit, so a pin change
+needs no separate viewer binary release. After the catalog change is merged,
 update Entity Viewer from Quasar's UI plugin catalog, update its companion on the
-managed servers, and restart Quasar to load the updated plugin. Capture budgets,
-storage quotas, model availability and omitted rendering details are documented
-in the pinned source's [replay guide](https://github.com/CometWorks/viewer/blob/5b4b0f45d86cf6ec27477a197792c7c93f48e803/Docs/Replay.md).
+managed servers, and restart Quasar. Capture budgets, storage quotas, model
+availability and omitted rendering details are in the viewer's
+[replay guide](https://github.com/CometWorks/viewer/blob/main/Docs/Replay.md).
 
 ## Review Expectations
 
