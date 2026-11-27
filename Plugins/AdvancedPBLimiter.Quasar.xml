@@ -43,5 +43,5 @@ enabled. Each cluster node shows as its own server.
         <CompanionPluginId>advancedpblimiter.quasar</CompanionPluginId>
     </CompanionPluginIds>
 
-    <Commit>daccc29bcbdd073c6cbeaeb47db5beabaf5f1a11</Commit>
+    <Commit>17723dc56149a2f32c59fd98c3b8d5b9ff39b4ba</Commit>
 </PluginData>
