@@ -132,9 +132,11 @@ diagnostics apply. Scene, asset and history operations use the authenticated
 Quasar browser SDK; the entity columns are a browser assembly loaded by the
 Quasar WASM dashboard. Nebula-hosted panels can start over HTTPS and move new
 work to WebRTC once a direct connection is confirmed; the hosted tunnel has a
-shared 20 Mbit/s limit. Viewer iframe URLs, dialog module imports and
-asset-setup requests keep Quasar's hosted panel path prefix and also work at the
-root.
+shared 20 Mbit/s limit. Viewer iframe URLs and asset-setup requests keep
+Quasar's hosted panel path prefix and also work at the root. The viewer and its
+asset setup dialog open through Quasar's native dialog host
+(`IQuasarDialogService`), so Entity Viewer 0.1.15 requires Quasar 1.7.1 with
+that host (v1.7.1.7 or later).
 
 In the Entities list, Firefox reuses the selected Content and Mods folders when
 opening another grid; reloading the page needs the folders selected again.
